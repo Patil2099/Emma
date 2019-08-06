@@ -98,7 +98,7 @@ The patterns config file files are usually unique for all the configIDs.
 Since the MCU does not have an MMU so it does not have virtual address spaces, we will not assign a sections config file to it.
 In contrast to the MCU, the SOC does use virtual address spaces, so we will assign a sections config file to it.
 
-    :::json
+    ::json
     {
         "MCU": {
             "compiler": "GHS",
@@ -128,7 +128,7 @@ The "SRAM" area is an internal RAM area, where data is stored. The last area is 
 where the SFRs of the controller are located. Since our software will have neither data nor code in this area,
 we will add it to the "ignoreMemory" array so it will not be a analyzed by Emma.
 
-    :::json
+    ::json
     {
         "memory": {
             "Code": {
@@ -171,7 +171,7 @@ is that the Application and the Bootloader will never run at the same time. Duri
 runtime, the data of the Bootloader is not present in the memory, only the code, so the SRAM 
 memory are needs to be ignored to get the correct results. 
 
-    :::json
+    ::json
     {
         "mapfiles": {
             "MCU_Application": {
@@ -187,7 +187,7 @@ memory are needs to be ignored to get the correct results.
 At this point the absolute minimum configuration for the MCU is done. You can try it out by adding
 the following line to the "SOC" object in the globalConfig.json:
     
-    :::json
+    ::json
     "ignoreConfigID": true
 
 This will lead to, that Emma will completely ignore the "SOC" configID and will not trow error
@@ -217,7 +217,7 @@ but it will not be present after the booting process anymore so it will not be p
 Based on all these info we will ignore the "Boot", "SRAM" and "Peripherals" memory areas by adding them
 to the "ignoreMemory" array.
 
-    :::json
+    ::json
     {
         "memory": {
             "Boot": {
@@ -275,7 +275,7 @@ the Emma documentation).
 For the SOC_monolith.map, we need to create the "monoliths" object. This object will contain a user defined
 name for the monolith, in this case "SOC_monolith" with a reg pattern just like the for the other mapfiles.
 
-    :::json
+    ::json
     {
         "mapfiles": {
             "SOC_OperatingSystem": {
@@ -305,7 +305,7 @@ sections as well and Emma needs to identify the virtual ones and assign them to 
 In this configuration only the SOC has virtual address spaces. The MCU does not need a
 config file like this.
 
-    :::json
+    ::json
     {
         "APP": [
             ".app_text",
@@ -355,7 +355,7 @@ have a group, they will be assigned to the default group.
 
 This config file is used for grouping sections with their full name.
 
-    :::json
+    ::json
     {
       "ReservedArea": [
         "bootloader",
@@ -367,7 +367,7 @@ This config file is used for grouping sections with their full name.
 
 This config file is used for grouping sections with name patterns.
 
-    :::json
+    ::json
     {
       "InterruptVectors": [
         "vectors"
@@ -393,7 +393,7 @@ This config file is used for grouping sections with name patterns.
 
 This config file is used for grouping objects with their full name. 
 
-    :::json
+    ::json
     {
       "Identifiers": [
         "identifiers.o"
@@ -471,7 +471,7 @@ memory is smaller than those. This config file shall contain the memory sizes th
 We have to include every memory type: "INT_RAM", "EXT_RAM", "INT_FLASH", "EXT_FLASH". If your project has more than one
 memory area that are not ignored, with the same type, simply add their sizes together and include them like that in this file. 
 
-    :::json
+    ::json
     {
         "Project Threshold in %": 80,
     
