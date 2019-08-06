@@ -201,26 +201,27 @@ In Emma, a memory configuration is called a **configID**. For each configID the 
 
 The globalConfig.json has to have the following format:
 
-    ::json
-    {
-        <CONFIG_ID>: {
-            "compiler": <COMPILER_NAME>,
-            "addressSpacesPath": <CONFIG_FILE>,
-            "patternsPath": <CONFIG_FILE>,
-            "virtualSectionsPath": <CONFIG_FILE>,
-            "ignoreConfigID": <BOOL>
-        },
-        .
-        .
-        .
-        <CONFIG_ID>: {
-            "compiler": <COMPILER_NAME>,
-            "addressSpacesPath": <CONFIG_FILE>,
-            "patternsPath": <CONFIG_FILE>,
-            "virtualSectionsPath": <CONFIG_FILE>,
-            "ignoreConfigID": <BOOL>
-        }
+```json
+{
+    <CONFIG_ID>: {
+        "compiler": <COMPILER_NAME>,
+        "addressSpacesPath": <CONFIG_FILE>,
+        "patternsPath": <CONFIG_FILE>,
+        "virtualSectionsPath": <CONFIG_FILE>,
+        "ignoreConfigID": <BOOL>
+    },
+    .
+    .
+    .
+    <CONFIG_ID>: {
+        "compiler": <COMPILER_NAME>,
+        "addressSpacesPath": <CONFIG_FILE>,
+        "patternsPath": <CONFIG_FILE>,
+        "virtualSectionsPath": <CONFIG_FILE>,
+        "ignoreConfigID": <BOOL>
     }
+}
+```
 
 The following rules apply:
 
@@ -248,28 +249,29 @@ The address spaces config files define the existing memory areas for the configI
 
 These config files have to have the following format:
 
-    ::json
-    {
-        "offset": <ADDRESS>,
-        "memory": {
-            <MEMORY_AREA>: {
-                "start": <ADDRESS>,
-                "end": <ADDRESS>,
-                "type": <MEMORY_TYPE>
-            },
-            .
-            .
-            .
-            <MEMORY_AREA>: {
-                "start": <ADDRESS>,
-                "end": <ADDRESS>,
-                "type": <MEMORY_TYPE>
-            }
+```json
+{
+    "offset": <ADDRESS>,
+    "memory": {
+        <MEMORY_AREA>: {
+            "start": <ADDRESS>,
+            "end": <ADDRESS>,
+            "type": <MEMORY_TYPE>
         },
-        "ignoreMemory": [
-            <MEMORY_AREA>, ... <MEMORY_AREA>
-        ]
-    }
+        .
+        .
+        .
+        <MEMORY_AREA>: {
+            "start": <ADDRESS>,
+            "end": <ADDRESS>,
+            "type": <MEMORY_TYPE>
+        }
+    },
+    "ignoreMemory": [
+        <MEMORY_AREA>, ... <MEMORY_AREA>
+    ]
+}
+```
 
 The following rules apply:
 
@@ -301,33 +303,34 @@ They belong to the configID they were assigned to in the globalConfigs.json.
 
 These config files have to have the following format:
 
-    ::json
-    {
-        "mapfiles": {
-            <SW_NAME>: {
-                "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>],
-                "VAS": <VAS_NAME>,
-                "UniquePatternSections": <REGEX_PATTERN>,
-                "UniquePatternObjects": <REGEX_PATTERN>,
-                "memRegionExcludes": [<MEMORY_AREA>, ... <MEMORY_AREA>]
-            },
-            .
-            .
-            .
-            <SW_NAME>: {
-                "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>],
-                "VAS": <VAS_NAME>,
-                "UniquePatternSections": <REGEX_PATTERN>,
-                "UniquePatternObjects": <REGEX_PATTERN>,
-                "memRegionExcludes": [<MEMORY_AREA>, ... <MEMORY_AREA>]
-            },
+```json
+{
+    "mapfiles": {
+        <SW_NAME>: {
+            "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>],
+            "VAS": <VAS_NAME>,
+            "UniquePatternSections": <REGEX_PATTERN>,
+            "UniquePatternObjects": <REGEX_PATTERN>,
+            "memRegionExcludes": [<MEMORY_AREA>, ... <MEMORY_AREA>]
         },
-        "monoliths": {
-            "<MONILITH_NAME>": {
-                "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>]
-            }
+        .
+        .
+        .
+        <SW_NAME>: {
+            "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>],
+            "VAS": <VAS_NAME>,
+            "UniquePatternSections": <REGEX_PATTERN>,
+            "UniquePatternObjects": <REGEX_PATTERN>,
+            "memRegionExcludes": [<MEMORY_AREA>, ... <MEMORY_AREA>]
+        },
+    },
+    "monoliths": {
+        "<MONILITH_NAME>": {
+            "regex": [<REGEX_PATTERN>, ... <REGEX_PATTERN>]
         }
     }
+}
+```
 
 The following rules apply:
 
@@ -369,24 +372,25 @@ If your configuration does not use virtual address spaces, the virtualSections*.
 
 This config file have to have the following format:
 
-    ::json
-    {
-        <VAS_NAME>: [
-            <SECTION_NAME>,
-            .
-            .
-            .
-            <SECTION_NAME>
-        ],
-        ...
-        <VAS_NAME>: [
-            <SECTION_NAME>,
-            .
-            .
-            .
-            <SECTION_NAME>
-        ]
-    }
+```json
+{
+    <VAS_NAME>: [
+        <SECTION_NAME>,
+        .
+        .
+        .
+        <SECTION_NAME>
+    ],
+    ...
+    <VAS_NAME>: [
+        <SECTION_NAME>,
+        .
+        .
+        .
+        <SECTION_NAME>
+    ]
+}
+```
 
 The following rules apply:
 
@@ -409,26 +413,27 @@ to categorize them based on the `categoriesObjectsKeywords.json` and `categories
 
 These config files have to have the following format:
 
-    ::json
-    {
-        <CATEGORY>: [
-            <NAME>,
-            .
-            .
-            .
-            <NAME>
-        ],
+```json
+{
+    <CATEGORY>: [
+        <NAME>,
         .
         .
         .
-        <CATEGORY>: [
-            <NAME>,
-            .
-            .
-            .
-            <NAME>
-        ]
-    }
+        <NAME>
+    ],
+    .
+    .
+    .
+    <CATEGORY>: [
+        <NAME>,
+        .
+        .
+        .
+        <NAME>
+    ]
+}
+```
 
 The following rules apply:
 
@@ -450,23 +455,24 @@ If they could not be categorized, then the software will assign them to a catego
 
 These config files have to have the following format:
 
-    ::json
-    {
-        <CATEGORY>: [
-            <KEYWORD>,
-            .
-            .
-            .
-            <KEYWORD>
-        ],
-        <CATEGORY>: [
-            <KEYWORD>,
-            .
-            .
-            .
-            <KEYWORD>
-        ]
-    }
+```json
+{
+    <CATEGORY>: [
+        <KEYWORD>,
+        .
+        .
+        .
+        <KEYWORD>
+    ],
+    <CATEGORY>: [
+        <KEYWORD>,
+        .
+        .
+        .
+        <KEYWORD>
+    ]
+}
+```
 
 The following rules apply:
 
@@ -498,10 +504,11 @@ If you have virtual address spaces (VASes) defined. We need a "monolith file" pa
 # Output Files
 The output Files will be saved to the memStats folder of the respective project. The filename will have this form: 
 
-    ::bash
-    <PROJECT_NAME>_Image_Summary_TIMESTAMP.csv
-    <PROJECT_NAME>_Module_Summary_TIMESTAMP.csv
-    <PROJECT_NAME>_Objects_in_Sections_TIMESTAMP.csv
+```bash
+<PROJECT_NAME>_Image_Summary_TIMESTAMP.csv
+<PROJECT_NAME>_Module_Summary_TIMESTAMP.csv
+<PROJECT_NAME>_Objects_in_Sections_TIMESTAMP.csv
+```
 
 ## Image Summary
 
@@ -572,10 +579,11 @@ In places there is some specific terminology used which is explained in the foll
 # Examples
 Create a Mapfile Summary for <PROJECT>:
 
-    ::bash
-    emma.py --project ..\<PROJECT> \
-    --mapfiles ..\MyMapfiles \
-    --dir ..\MyMapfiles\results
+```bash
+emma.py --project ..\<PROJECT> \
+--mapfiles ..\MyMapfiles \
+--dir ..\MyMapfiles\results
+```
 
 ## Matching module name and category using `categoriesKeywords.json`
 `categoriesKeywords.json` can be used to match module names with catgories by user defined keywords.
@@ -604,9 +612,10 @@ Not needed module names can be removed from `categories.json`, for example when 
 ## GHS Monolith file generation
 Execute this to generate the monolith files (you need to have the ELF file for this step).
 
-    ::bash
-    gdump.exe -virtual_mapping -no_trunc_sec_names Application.elf >> monolith.map
-    gdump.exe -map             -no_trunc_sec_names Application.elf >> monolith.map
+```bash
+gdump.exe -virtual_mapping -no_trunc_sec_names Application.elf >> monolith.map
+gdump.exe -map             -no_trunc_sec_names Application.elf >> monolith.map
+```
 
 By default long names will be truncated. This can lead to inaccurate results. In order to prevent this use `-no_trunc_sec_names`.
 

@@ -194,12 +194,13 @@ Output files are:
 # Examples
 After the Image Summary has been created with emma.py and the memStats CSV files were saved to the directory `../[PROJECT]/results/memStats`, it can be visualised using:
 
-    ::bash
-    python emma_vis.py \
-    --project ..\[PROJECT] \
-    --dir ..\[PROJECT]\results \
-    --quiet \
-    --overview
+```bash
+python emma_vis.py \
+--projectDir ..\[PROJECT] \
+--inOutDir ..\[PROJECT]\results \
+--quiet \
+--overview
+```
 
 ## Calling Graph Emma Visualiser
 <div align="center"> <img src="../genDoc/call_graph_uml/emma_vis_filtered.profile.png" width="1000" /> </div>
