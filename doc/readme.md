@@ -201,7 +201,7 @@ In Emma, a memory configuration is called a **configID**. For each configID the 
 
 The globalConfig.json has to have the following format:
 
-    :::json
+    ::json
     {
         <CONFIG_ID>: {
             "compiler": <COMPILER_NAME>,
@@ -248,7 +248,7 @@ The address spaces config files define the existing memory areas for the configI
 
 These config files have to have the following format:
 
-    :::json
+    ::json
     {
         "offset": <ADDRESS>,
         "memory": {
@@ -301,7 +301,7 @@ They belong to the configID they were assigned to in the globalConfigs.json.
 
 These config files have to have the following format:
 
-    :::json
+    ::json
     {
         "mapfiles": {
             <SW_NAME>: {
@@ -369,7 +369,7 @@ If your configuration does not use virtual address spaces, the virtualSections*.
 
 This config file have to have the following format:
 
-    :::json
+    ::json
     {
         <VAS_NAME>: [
             <SECTION_NAME>,
@@ -409,7 +409,7 @@ to categorize them based on the `categoriesObjectsKeywords.json` and `categories
 
 These config files have to have the following format:
 
-    :::json
+    ::json
     {
         <CATEGORY>: [
             <NAME>,
@@ -450,7 +450,7 @@ If they could not be categorized, then the software will assign them to a catego
 
 These config files have to have the following format:
 
-    :::json
+    ::json
     {
         <CATEGORY>: [
             <KEYWORD>,
@@ -498,7 +498,7 @@ If you have virtual address spaces (VASes) defined. We need a "monolith file" pa
 # Output Files
 The output Files will be saved to the memStats folder of the respective project. The filename will have this form: 
 
-    :::bash
+    ::bash
     <PROJECT_NAME>_Image_Summary_TIMESTAMP.csv
     <PROJECT_NAME>_Module_Summary_TIMESTAMP.csv
     <PROJECT_NAME>_Objects_in_Sections_TIMESTAMP.csv
@@ -572,7 +572,7 @@ In places there is some specific terminology used which is explained in the foll
 # Examples
 Create a Mapfile Summary for <PROJECT>:
 
-    :::bash
+    ::bash
     emma.py --project ..\<PROJECT> \
     --mapfiles ..\MyMapfiles \
     --dir ..\MyMapfiles\results
@@ -604,7 +604,7 @@ Not needed module names can be removed from `categories.json`, for example when 
 ## GHS Monolith file generation
 Execute this to generate the monolith files (you need to have the ELF file for this step).
 
-    :::bash
+    ::bash
     gdump.exe -virtual_mapping -no_trunc_sec_names Application.elf >> monolith.map
     gdump.exe -map             -no_trunc_sec_names Application.elf >> monolith.map
 

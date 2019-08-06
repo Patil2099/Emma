@@ -194,7 +194,7 @@ Output files are:
 # Examples
 After the Image Summary has been created with emma.py and the memStats CSV files were saved to the directory `../[PROJECT]/results/memStats`, it can be visualised using:
 
-    :::bash
+    ::bash
     python emma_vis.py \
     --project ..\[PROJECT] \
     --dir ..\[PROJECT]\results \
