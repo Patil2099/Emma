@@ -1,0 +1,831 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Emma Memmory and Mapfile Analyser</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#emma" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Emma Memmory and Mapfile Analyser" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">🔍</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Emma Memmory and Mapfile Analyser
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Home
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/bmwcarit/Emma.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Emma Memmory and Mapfile Analyser
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Emma Memmory and Mapfile Analyser" class="md-nav__button md-logo">
+      
+        <i class="md-icon">🔍</i>
+      
+    </a>
+    Emma Memmory and Mapfile Analyser
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/bmwcarit/Emma.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Emma Memmory and Mapfile Analyser
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+    
+    <a href="index.html" title="Home" class="md-nav__link md-nav__link--active">
+      Home
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-workflow" class="md-nav__link">
+    General Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-files-are-already-present" class="md-nav__link">
+    Project files are already present
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-files-that-have-to-be-created" class="md-nav__link">
+    Project files that have to be created
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-documentation" class="md-nav__link">
+    Full documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribute" class="md-nav__link">
+    Contribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mailing-list" class="md-nav__link">
+    Mailing List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies-licences" class="md-nav__link">
+    Dependencies &amp; Licences
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="readme-emma.html" title="Emma" class="md-nav__link">
+      Emma
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="readme-vis.html" title="Emma Visualiser" class="md-nav__link">
+      Emma Visualiser
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="test_project/readme.html" title="Test Project" class="md-nav__link">
+      Test Project
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="dev-guide.html" title="Developer Guide" class="md-nav__link">
+      Developer Guide
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-workflow" class="md-nav__link">
+    General Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-files-are-already-present" class="md-nav__link">
+    Project files are already present
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-files-that-have-to-be-created" class="md-nav__link">
+    Project files that have to be created
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-documentation" class="md-nav__link">
+    Full documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribute" class="md-nav__link">
+    Contribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mailing-list" class="md-nav__link">
+    Mailing List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies-licences" class="md-nav__link">
+    Dependencies &amp; Licences
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/bmwcarit/Emma.git/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="emma">Emma<a class="headerlink" href="#emma" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.codacy.com/app/holzkohlengrill/Emma?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bmwcarit/Emma&amp;utm_campaign=Badge_Grade"><img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Grade/8c6208f6f0bf4d429b13e2fa701aa780" /></a>
+<a href="https://www.codacy.com/app/holzkohlengrill/Emma?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bmwcarit/Emma&amp;utm_campaign=Badge_Coverage"><img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Coverage/8c6208f6f0bf4d429b13e2fa701aa780" /></a>
+<a href="https://travis-ci.org/bmwcarit/Emma"><img alt="Build Status" src="https://travis-ci.org/bmwcarit/Emma.svg?branch=master" /></a>
+<a href="https://pypi.org/project/pypiemma/"><img alt="PyPi" src="https://img.shields.io/pypi/v/pypiemma" /></a>
+<a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
+<a href="https://bmwcarit.github.io/Emma"><img alt="GitHub pages" src="https://img.shields.io/badge/doc-GitHub%20pages-blue" /></a></p>
+<p><strong>Emma Memory and Mapfile Analyser (Emma)</strong></p>
+<blockquote>
+<p>Conduct static (i.e. worst case) memory consumption analyses based on arbitrary linker map files. It produces extensive <code>.csv</code> files which are easy to filter and post-process. Optionally <code>.html</code> and markdown reports as well as neat figures help you visualising your results.</p>
+</blockquote>
+<!-- We use onerror to make images visible when viewing the content using GitHub Pages etc. on the other side reading the markdown file using an editor should kept intact -->
+
+<div align="center"> <img src="./doc/images/architecture.png" onerror="this.onerror=null;this.src='images/architecture.png';" width="100%"> </div>
+
+<p>Given a <strong>map file input</strong> (Green Hills map files are the default but others - like GCC - are supported via configuration options; examples are enclosed) Emma <strong>map</strong>s the addresses of sections (aka images) and/or objects (aka modules) <strong>to memory regions</strong> (all addresses given via map files must be known during compile time). Those memory regions are classified into two levels of granularity respectively. The first level defines arbitrary groups based on your personal taste (however using names similar to those defined by your microcontroller vendor makes most sense). Later each of those regions (second level) are assigned to one of four generalised predefined memory regions (those are: <code>INT_RAM</code>, <code>INT_FLASH</code>, <code>EXT_RAM</code>, <code>EXT_FLASH</code>). In case of <strong>virtual memory</strong> objects and sections lying within virtual address spaces (VASes) get <strong>translated back into physical memory</strong>. This is depicted in the figure above (lower part).</p>
+<p><strong>Categorisation</strong> can be used to assign consumers (a consumer would usually represent a software component) to each object or section. This is useful for subsequent steps in order to display memory consumption per consumer type. See the upper part of the figure shown above. Mechanisms are provided to batch categorise object and section names. "Objects in sections" provides ways to obtain a <strong>finer granularity of the categorisation result</strong>. Therefore categorised sections containing (smaller) objects of a different category got split up and result into a more accurate categorisation.</p>
+<p>As a result you will get <strong>output</strong> files in form of a <strong><code>.csv</code> file</strong> which sets you up to do later processing on this data easily. In this file <strong>additional information is added</strong> like:</p>
+<ul>
+<li>Overlaps (of sections/objects)</li>
+<li>Containments (e.g. sections containing objects)</li>
+<li>Duplicates</li>
+<li>All meta data about the origin of each section/object (mapfile, addess space, ...)</li>
+<li>...</li>
+</ul>
+<p>Holding the aforementioned <strong>augmented data</strong> makes it easy to <strong>detect issues in linker scripts</strong> and get an <strong>in-depth understanding of</strong> your program's <strong>memory consumption</strong>. Including a lot of additional and "corrected" data can cause confusion. Thus all original (unmodified) data is preserved in the output files simultaneously.</p>
+<p>The Emma visualiser helps you to create nice plots and reports in a <code>.png</code> and <code>.html</code> and markdown file format.</p>
+<p>The whole Emma tool suite contains command line options making it convenient to be <strong>run on a build server</strong> like <code>--Werror</code> (treat all warnings as errors) or <code>--no-prompt</code> (exit and fail on user prompts; user prompts can happen when ambiguous configurations appear such as multiple matches for one configured map files).</p>
+<hr />
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip3 install pypiemma
+</pre></div>
+</td></tr></table>
+
+<p>Dependencies: Python 3.6 or higher; <code>pip3 install Pygments Markdown matplotlib pandas pypiscout</code></p>
+<h2 id="general-workflow">General Workflow<a class="headerlink" href="#general-workflow" title="Permanent link">&para;</a></h2>
+<p>The following figure shows a possible workflow using Emma:</p>
+<!-- We use onerror to make images visible when viewing the content using GitHub Pages etc. on the other side reading the markdown file using an editor should kept intact -->
+
+<div align="center"> <img src="./doc/images/workflow.png" onerror="this.onerror=null;this.src='images/workflow.png';" width="100%"> </div>
+
+<p><strong>Emma</strong> - as the core component - produces an intermediate <code>.csv</code> file. Inputs are mapfiles and JSON files (for configuration (memory layout, sizes, ...)). From this point you are very flexible to choose your own pipeline. You could</p>
+<ul>
+<li>use the Emma tools (<strong>Emma Visualiser</strong>, <strong>Emma Deltas</strong>, ...) for <strong>further processing (data aggregation and analysis)</strong>,</li>
+<li>simply your favourite spreadsheet software (like Microsoft Excel or LibreOffice Calc) or</li>
+<li>use your own tool for the data analysis.</li>
+</ul>
+<h2 id="quick-start-guide">Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">&para;</a></h2>
+<p>At this point we want to give you a brief overview what to do in the below two scenarios. If you want to play around go to <a href="#Project-files-are-already-present">(project files are already present)</a> and use our example projects in <code>./doc/test_project*</code>.</p>
+<ul>
+<li>if the Emma <em>project is already set-up</em> (JSON files were created) and you want to analyse your software with newly generated mapfiles proceed to <a href="#Project-files-are-already-present">-&gt; Project files are already present</a> or</li>
+<li>you <em>start</em> your analysis <em>from scratch</em> and need to do configure Emma before you use it then go to <a href="#project-files-that-have-to-be-created">-&gt; Project files have to be created</a>.</li>
+</ul>
+<p>Example projects (including Emma* outputs/results) can be found in <code>./doc/test_project*</code>.</p>
+<p><em>Since version 3.1</em> Emma can be called in two ways (if you want to run it from the installation folder) where the following variant is recommended:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python Emma.py a --project doc/test_project --mapfiles doc/test_project/mapfiles --noprompt
+</pre></div>
+</td></tr></table>
+
+<p>The following table provides an overview how you call Emma:</p>
+<table>
+<thead>
+<tr>
+<th>Emma module</th>
+<th>Entry point + \&lt;options>) (if installed via <code>pip</code>)</th>
+<th>Top level sub-command (tlsc) (<code>python Emma.py</code> \&lt;tlsc>)</th>
+<th>Module (<code>python -m</code> + \&lt;module> \&lt;options>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analyser</td>
+<td><code>emma</code></td>
+<td><code>a</code></td>
+<td><code>Emma.emma</code></td>
+</tr>
+<tr>
+<td>Visualiser</td>
+<td><code>emma_vis</code></td>
+<td><code>v</code></td>
+<td><code>Emma.emma_vis</code></td>
+</tr>
+<tr>
+<td>Deltas</td>
+<td><code>emma_deltas</code></td>
+<td><code>d</code></td>
+<td><code>Emma.emma_deltas</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="project-files-are-already-present">Project files are already present<a class="headerlink" href="#project-files-are-already-present" title="Permanent link">&para;</a></h3>
+<p>Try <code>python Emma.py a --help</code> to see all possible options or refer to the documentation (<code>./doc/*</code>).</p>
+<ol>
+<li>Create intermediate <code>.csv</code> from mapfiles with Emma:</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python Emma.py a -p .<span class="se">\M</span>yProjectFolder --map .<span class="se">\M</span>yProjectFolder<span class="se">\m</span>apfiles --dir .<span class="se">\M</span>yProjectFolder<span class="se">\a</span>nalysis --subdir Analysis_1
+</pre></div>
+</td></tr></table>
+
+<ol>
+<li>Generate reports and graphs with Emma Visualiser:</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python Emma.py v -p .<span class="se">\M</span>yProjectFolder --dir .<span class="se">\M</span>yProjectFolder<span class="se">\a</span>nalysis --subdir Analysis_1 -q 
+</pre></div>
+</td></tr></table>
+
+<h3 id="project-files-that-have-to-be-created">Project files that have to be created<a class="headerlink" href="#project-files-that-have-to-be-created" title="Permanent link">&para;</a></h3>
+<p>To create a new project, the following files must be created:</p>
+<ul>
+<li><code>globalConfig.json</code></li>
+<li><code>budgets.json</code></li>
+<li><code>categories.json</code></li>
+<li><code>categoriesKeywords.json</code></li>
+<li><code>categoriesSections.json</code></li>
+<li><code>categoriesSectionsKeywords.json</code></li>
+</ul>
+<p>You will find example projects in <code>./doc/test_project*</code>. In-depth documentation can be found in the full documentation (see <code>./doc/</code>).</p>
+<p>A basic configuration can be short per file. For complex systems you can choose from many optional keywords/options that will provide you means to adjust your analysis as fine grained as you wish.</p>
+<p>One main concept includes the <code>globalConfig.json</code>. You can see this as meta-config. Each configuration ID (configID) is a separately conducted analysis. Per configID you state individually the configuration files you want to use for this exact analysis. Herewith you can mix and match any combination of subconfigs you prefer.</p>
+<!-- We use onerror to make images visible when viewing the content using GitHub Pages etc. on the other side reading the markdown file using an editor should kept intact -->
+
+<div align="center"> <img src="./doc/images/globalConfigScheme.png" onerror="this.onerror=null;this.src='images/globalConfigScheme.png';" width="60%"> </div>
+
+<p>A <code>globalConfig.json</code> could look like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;configID1&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;addressSpacesPath&quot;</span><span class="p">:</span> <span class="s2">&quot;addressSpaces.json&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sectionsPath&quot;</span><span class="p">:</span> <span class="s2">&quot;sections.json&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;patternsPath&quot;</span><span class="p">:</span> <span class="s2">&quot;patterns.json&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="full-documentation">Full documentation<a class="headerlink" href="#full-documentation" title="Permanent link">&para;</a></h2>
+<p>For the full documentation please refer to the <code>./doc/</code> directory.</p>
+<h2 id="contribute">Contribute<a class="headerlink" href="#contribute" title="Permanent link">&para;</a></h2>
+<p>We are glad if you want to participate. In <code>./doc/dev-guide.md</code> you will find a guide telling you everything you need to know including coding conventions and more.</p>
+<h2 id="mailing-list"><a href="https://groups.google.com/forum/#!forum/emma-dev">Mailing List</a><a class="headerlink" href="#mailing-list" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>emma-dev (. at) googlegroups.com
+</pre></div>
+</td></tr></table>
+
+<h2 id="dependencies-licences">Dependencies &amp; Licences<a class="headerlink" href="#dependencies-licences" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Library (version)</th>
+<th>pip package name</th>
+<th>Licence</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown (v3.0.1+)</td>
+<td><a href="https://pypi.org/project/Markdown/">Markdown</a></td>
+<td>BSD-3-Clause</td>
+<td><a href="https://github.com/Python-Markdown/markdown">https://github.com/Python-Markdown/markdown</a>; <a href="https://python-markdown.github.io/">https://python-markdown.github.io/</a></td>
+</tr>
+<tr>
+<td>Pandas (v0.23.4+)</td>
+<td><a href="https://pypi.org/project/pandas/">pandas</a></td>
+<td>BSD-3-Clause</td>
+<td><a href="https://github.com/pandas-dev/pandas/">https://github.com/pandas-dev/pandas/</a>; <a href="http://pandas.pydata.org/getpandas.html">http://pandas.pydata.org/getpandas.html</a></td>
+</tr>
+<tr>
+<td>Pygments (v2.3.1+)</td>
+<td><a href="https://pypi.org/project/Pygments/">Pygments</a></td>
+<td>BSD-2-Clause</td>
+<td><a href="https://bitbucket.org/birkenfeld/pygments-main/src/default/">https://bitbucket.org/birkenfeld/pygments-main/src/default/</a>; <a href="http://pygments.org/download/">http://pygments.org/download/</a></td>
+</tr>
+<tr>
+<td>Matplotlib (v3.0.0+)</td>
+<td><a href="https://pypi.org/project/matplotlib/">matplotlib</a></td>
+<td>Matplotlib License (BSD compatible)</td>
+<td><a href="https://matplotlib.org/users/installing.html">https://matplotlib.org/users/installing.html</a>; <a href="https://github.com/matplotlib/matplotlib">https://github.com/matplotlib/matplotlib</a></td>
+</tr>
+<tr>
+<td>SCout (v1.8+)</td>
+<td><a href="https://pypi.org/project/pypiscout/">pypiscout</a></td>
+<td>MIT</td>
+<td><a href="https://github.com/holzkohlengrill/SCout">https://github.com/holzkohlengrill/SCout</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies needed to generate documentation:</strong></p>
+<p>Utility scripts in <code>./doc/</code> need additional dependencies. As a normal user you can ignore this.</p>
+<table>
+<thead>
+<tr>
+<th>Library (version)</th>
+<th>pip package name</th>
+<th>Licence</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gprof2dot (v2017.9.19+)</td>
+<td><a href="https://pypi.org/project/gprof2dot/">gprof2dot</a></td>
+<td>LGPL-3.0</td>
+<td><a href="https://github.com/jrfonseca/gprof2dot">https://github.com/jrfonseca/gprof2dot</a></td>
+</tr>
+<tr>
+<td>pylint (v2.3.1+)</td>
+<td><a href="https://pypi.org/project/pylint/">pylint</a></td>
+<td>GPL-2.0</td>
+<td><a href="https://github.com/PyCQA/pylint">https://github.com/PyCQA/pylint</a></td>
+</tr>
+</tbody>
+</table>
+<p>Please refer to the <a href="https://github.com/jrfonseca/gprof2dot">gprof2dot project site</a> and install <strong>its dependencies (this has to be done even if you install Emma via pip)</strong>.</p>
+<p>Note that those modules are invoked via subprocess calls within the ./genDoc/ scripts.</p>
+<p><strong>Dependencies used for documentation on GitHub pages (separate, independent branch <code>gh-pages</code>):</strong></p>
+<p>Utility scripts used to build GitHub pages documentation. As a normal user you can ignore this.</p>
+<table>
+<thead>
+<tr>
+<th>Library (version)</th>
+<th>pip package name</th>
+<th>Licence</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MkDocs (v1.0.4+)</td>
+<td><a href="https://pypi.org/project/mkdocs/">mkdocs</a></td>
+<td>BSD-3Clause</td>
+<td><a href="https://github.com/mkdocs/mkdocs">https://github.com/mkdocs/mkdocs</a></td>
+</tr>
+<tr>
+<td>Material for MkDocs (v4.4.1+)</td>
+<td><a href="https://pypi.org/project/mkdocs-material/">mkdocs-material</a></td>
+<td>MIT</td>
+<td><a href="https://github.com/squidfunk/mkdocs-material">https://github.com/squidfunk/mkdocs-material</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Code snippets etc.:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name (version)</th>
+<th>Kind</th>
+<th>Modified?</th>
+<th>Licence</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pygmentize (v2.2.0+)</td>
+<td>Auto-generated .css file</td>
+<td>Yes</td>
+<td>BSD-2-Clause</td>
+<td><a href="http://pygments.org/download/">http://pygments.org/download/</a>; <a href="https://bitbucket.org/birkenfeld/pygments-main/issues/1496/question-licence-of-auto-generated-css">https://bitbucket.org/birkenfeld/pygments-main/issues/1496/question-licence-of-auto-generated-css</a></td>
+</tr>
+<tr>
+<td>toHumanReadable (--)</td>
+<td>Code snippet</td>
+<td>No</td>
+<td>MIT</td>
+<td><a href="https://github.com/TeamFlowerPower/kb/wiki/humanReadable">https://github.com/TeamFlowerPower/kb/wiki/humanReadable</a></td>
+</tr>
+</tbody>
+</table>
+<p>For the full documentation please refer to the <code>./doc/</code> directory.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="readme-emma.html" title="Emma" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Emma
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            The Emma Authors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/bmwcarit/Emma" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
